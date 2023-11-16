@@ -13,10 +13,13 @@ const bookSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
-});
+},
+    {
+        timestamps: true
+    }
+);
+
+const Book = mongoose.model('Book', bookSchema);
 
 // Use the `bookSchema` to define the `Book` model
-const BookModel = mongoose.model('Book', bookSchema);
-
-// Export the `Book` model
-module.exports = BookModel;
+module.exports = { Book };
